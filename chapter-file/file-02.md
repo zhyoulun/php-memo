@@ -86,6 +86,9 @@ class FileCache
 }
 ```
 
+> 查看文件时间信息 stat file.txt
+> bool touch ( string $filename [, int $time = time() [, int $atime ]] ) 设定文件的访问和修改时间
+
 ### 参考
 
 - [yii\caching\FileCache文档](http://www.yiichina.com/doc/api/2.0/yii-caching-filecache)
