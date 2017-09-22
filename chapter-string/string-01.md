@@ -44,7 +44,7 @@ function randomString($length)
 }
 ```
 
-
+速度 2>1>3，1的范围有限制
 
 ### 参考
 
