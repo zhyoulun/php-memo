@@ -14,7 +14,7 @@
 * Redis数据库
   * [操作redis的单例模式](chapter-redis/redis-01.md)
   * [redis读写分离](chapter-redis/redis-02.md)
-  * [redis中的消息队列](chapter-redis/redis-03.md)
+  * [socket连接redis](chapter-redis/redis-03.md)
 * 字符串
   * [生成随机字符串](chapter-string/string-01.md)
 

@@ -3,7 +3,6 @@
 ### 代码1
 
 ```
-<?php
 function func1($a,$b,$c,$d)
 {
     throw new Exception();
@@ -104,7 +103,32 @@ object(Exception)#1 (7) {
 
 ### 代码2
 
-将代码1中的`var_dump($e);`替换为`printException($e);`
+将代码1中的`var_dump($e)`替换为`printException($e)`，其中`printException()`函数如下所示：
+
+```
+function printException(Exception $e)
+{
+    $traceArray = $e->getTrace();
+    $traceArrayCount = count($traceArray);
+    $index = 0;
+    for($i=$traceArrayCount-1;$i>=0;$i--){
+        $item = $traceArray[$i];
+        $index++;
+        echo "index:{$index}---------------\n";
+        echo "file: {$item['file']}\n";
+        echo "line: {$item['line']}\n";
+        echo "function: {$item['function']}\n";
+        echo "args: ".implode(',', $item['args'])."\n";
+    }
+
+    $index++;
+    echo "index:{$index}---------------\n";
+    echo "code: ".$e->getCode()."\n";
+    echo "message: ".$e->getMessage()."\n";
+    echo "file: ".$e->getFile()."\n";
+    echo "line: ".$e->getLine()."\n";
+}
+```
 
 输出结果
 

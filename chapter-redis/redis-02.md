@@ -3,7 +3,6 @@
 `Redis`类基于PHP扩展[https://pecl.php.net/package/redis](https://pecl.php.net/package/redis)，该扩展的详细用法参考[https://github.com/phpredis/phpredis/](https://github.com/phpredis/phpredis/)。
 
 ```
-<?php
 class RedisRWProxy
 {
     private static $pool = [];  //连接池
