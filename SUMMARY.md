@@ -9,6 +9,9 @@
   * [使用文件缓存](chapter-file/file-02.md)
   * [?写入文件时使用独占锁](chapter-file/file-03.md)
   * [解析ini配置文件](chapter-file/file-04.md)
+* HTTP
+  * [Content-Type](chapter-http/http-01.md)
+  * [获取客户端IP地址](chapter-http/http-02.md)
 * MySQL数据库
   * [操作数据库的单例模式](chapter-mysql/mysql-01.md)
 * Redis数据库
