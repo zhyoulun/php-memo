@@ -42,3 +42,7 @@ The following error occurred: No such file or directory
 
 - [bzero, memset ,setmem 区别](http://blog.csdn.net/joeblackzqq/article/details/8257877)
 
+### 参考地址
+
+- [The Linux man-pages project](https://www.kernel.org/doc/man-pages/)
+- [http://www.cplusplus.com/](http://www.cplusplus.com/)

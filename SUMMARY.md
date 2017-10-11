@@ -18,6 +18,10 @@
   * [操作redis的单例模式](chapter-redis/redis-01.md)
   * [redis读写分离](chapter-redis/redis-02.md)
   * [不使用扩展，连接并操作redis数据库](chapter-redis/redis-03.md)
+* 源码分析
+  * [C语言函数学习](chapter-source-code/source-code-01.md)
+  * [Unix网络编程术语](chapter-source-code/source-code-02.md)
+  * [sockaddr结构分析](chapter-source-code/source-code-03.md)
 * 字符串
   * [生成随机字符串](chapter-string/string-01.md)
 
