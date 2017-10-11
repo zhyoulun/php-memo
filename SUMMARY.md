@@ -12,8 +12,10 @@
 * HTTP
   * [Content-Type](chapter-http/http-01.md)
   * [获取客户端IP地址](chapter-http/http-02.md)
+  * [移除响应头中的Server信息](chapter-http/http-03.md)
 * MySQL数据库
   * [操作数据库的单例模式](chapter-mysql/mysql-01.md)
+  * [MySQL中的日期时间函数](chapter-mysql/mysql-02.md)
 * Redis数据库
   * [操作redis的单例模式](chapter-redis/redis-01.md)
   * [redis读写分离](chapter-redis/redis-02.md)
