@@ -25,6 +25,8 @@
   * [C语言函数学习](chapter-source-code/source-code-01.md)
   * [Unix网络编程术语](chapter-source-code/source-code-02.md)
   * [sockaddr结构分析](chapter-source-code/source-code-03.md)
+  * [判断主机字节序](chapter-source-code/source-code-04.md)
+  * [基于C语言的简单HTTP服务器](chapter-source-code/source-code-05.md)
 * 字符串
   * [生成随机字符串](chapter-string/string-01.md)
 
