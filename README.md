@@ -14,6 +14,7 @@
   * [获取客户端IP地址](chapter-http/http-02.md)
   * [移除响应头中的Server信息](chapter-http/http-03.md)
   * [使用UserAgent判断是否为移动端](chapter-http/http-04.md)
+  * [python调用curl获取网页](chapter-http/http-05.md)
 * MySQL数据库
   * [操作数据库的单例模式](chapter-mysql/mysql-01.md)
   * [MySQL中的日期时间函数](chapter-mysql/mysql-02.md)
@@ -25,6 +26,8 @@
   * [C语言函数学习](chapter-source-code/source-code-01.md)
   * [Unix网络编程术语](chapter-source-code/source-code-02.md)
   * [sockaddr结构分析](chapter-source-code/source-code-03.md)
+  * [判断主机字节序](chapter-source-code/source-code-04.md)
+  * [基于C语言的简单HTTP服务器](chapter-source-code/source-code-05.md)
 * 字符串
   * [生成随机字符串](chapter-string/string-01.md)
 
