@@ -15,6 +15,8 @@
   * [移除响应头中的Server信息](chapter-http/http-03.md)
   * [使用UserAgent判断是否为移动端](chapter-http/http-04.md)
   * [python调用curl获取网页](chapter-http/http-05.md)
+* 消息队列
+  * [kafka-manager安装备忘](chapter-message-queue/message-queue-01.md)
 * MySQL数据库
   * [操作数据库的单例模式](chapter-mysql/mysql-01.md)
   * [MySQL中的日期时间函数](chapter-mysql/mysql-02.md)
@@ -22,6 +24,8 @@
   * [操作redis的单例模式](chapter-redis/redis-01.md)
   * [redis读写分离](chapter-redis/redis-02.md)
   * [不使用扩展，连接并操作redis数据库](chapter-redis/redis-03.md)
+* Linux Shell
+  * [获取当前脚本所在文件夹的路径](chapter-shell/shell-01.md)
 * 源码分析
   * [C语言函数学习](chapter-source-code/source-code-01.md)
   * [Unix网络编程术语](chapter-source-code/source-code-02.md)

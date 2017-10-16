@@ -4,7 +4,7 @@ tinyHttpd主页：[http://tinyhttpd.sourceforge.net/](http://tinyhttpd.sourcefor
 
 ### 基础代码
 
-这里将接受到的用户请求放在线程中处理，即执行函数`void accept_request(int client)`。
+这里将接受到的用户请求放在线程中处理，即在线程中执行函数`void accept_request(int client)`。
 
 ```
 #include <stdio.h>
