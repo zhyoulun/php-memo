@@ -92,6 +92,6 @@ int socket(int family, int type, int protocol);
 #define SOCK_SEQPACKET	5		/* sequential packet socket  有序分组套接字	*/
 ```
 
-最后附上family和type参数的组合
+最后附上family和type参数的组合效果
 
 ![](../images/source-code-002.png)

@@ -1,33 +1,5 @@
-# 目录
+# php备忘录
 
-* 数组
-  * [遍历数组中的每一个键值对](chapter-array/array-01.md)
-* 异常
-  * [异常捕获](chapter-exception/exception-01.md)
-* 文件
-  * [递归创建文件夹](chapter-file/file-01.md)
-  * [使用文件缓存](chapter-file/file-02.md)
-  * [?写入文件时使用独占锁](chapter-file/file-03.md)
-  * [解析ini配置文件](chapter-file/file-04.md)
-* HTTP
-  * [Content-Type](chapter-http/http-01.md)
-  * [获取客户端IP地址](chapter-http/http-02.md)
-  * [移除响应头中的Server信息](chapter-http/http-03.md)
-  * [使用UserAgent判断是否为移动端](chapter-http/http-04.md)
-  * [python调用curl获取网页](chapter-http/http-05.md)
-* MySQL数据库
-  * [操作数据库的单例模式](chapter-mysql/mysql-01.md)
-  * [MySQL中的日期时间函数](chapter-mysql/mysql-02.md)
-* Redis数据库
-  * [操作redis的单例模式](chapter-redis/redis-01.md)
-  * [redis读写分离](chapter-redis/redis-02.md)
-  * [不使用扩展，连接并操作redis数据库](chapter-redis/redis-03.md)
-* 源码分析
-  * [C语言函数学习](chapter-source-code/source-code-01.md)
-  * [Unix网络编程术语](chapter-source-code/source-code-02.md)
-  * [sockaddr结构分析](chapter-source-code/source-code-03.md)
-  * [判断主机字节序](chapter-source-code/source-code-04.md)
-  * [基于C语言的简单HTTP服务器](chapter-source-code/source-code-05.md)
-* 字符串
-  * [生成随机字符串](chapter-string/string-01.md)
+gitbook阅读地址：[https://www.gitbook.com/read/book/zhyoulun/php-memo](https://www.gitbook.com/read/book/zhyoulun/php-memo)
 
+目录[SUMMARY.md](SUMMARY.md)

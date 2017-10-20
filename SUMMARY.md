@@ -33,6 +33,7 @@
   * [判断主机字节序](chapter-source-code/source-code-04.md)
   * [基于C语言的简单HTTP服务器](chapter-source-code/source-code-05.md)
   * [socket()函数的参数](chapter-source-code/source-code-06.md)
+  * [基本TCP客户端/服务端程序的套接字交互流程图](chapter-source-code/source-code-07.md)
 * 字符串
   * [生成随机字符串](chapter-string/string-01.md)
 
