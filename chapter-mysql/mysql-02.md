@@ -6,8 +6,8 @@
 
 语法
 
-> NOW([fsp])
-> SYSDATE([fsp]) 
+- NOW([fsp])
+- SYSDATE([fsp]) 
 
 该函数会返回'YYYY-MM-DD HH:MM:SS'或者YYYYMMDDHHMMSS的结果，依赖于是作为字符串还是数字。
 
@@ -67,8 +67,8 @@ now()的同义词
 
 语法
 
-> DATE(expr)
-> TIME(expr)
+- DATE(expr)
+- TIME(expr)
 
 例子
 
@@ -89,14 +89,14 @@ TIME('2003-12-31 01:02:03.000123'): 01:02:03.000123
 
 语法
 
-> year(date)，返回值的范围是1000到9999，如果date是0，则返回0
-> month(date)，返回值的范围是1到12，如果是'0000-00-00'或者'2012-00-00'，则返回0
-> day(date)，和DAYOFMONTH()是同义词，返回值的范围是1到31，如果是'0000-00-00'或者'2012-00-00'，则返回0
-> hour(time)，返回值的范围是0到23，但如果'272:59:59'，则返回272
-> minute(time)，返回值的范围是0到59
-> second(time)，返回值的范围是0到59
-> microsecond(expr)，返回值范围是0到999999
-> weekday(date)，返回值(0 = Monday, 1 = Tuesday, … 6 = Sunday)
+- year(date)，返回值的范围是1000到9999，如果date是0，则返回0
+- month(date)，返回值的范围是1到12，如果是'0000-00-00'或者'2012-00-00'，则返回0
+- day(date)，和DAYOFMONTH()是同义词，返回值的范围是1到31，如果是'0000-00-00'或者'2012-00-00'，则返回0
+- hour(time)，返回值的范围是0到23，但如果'272:59:59'，则返回272
+- minute(time)，返回值的范围是0到59
+- second(time)，返回值的范围是0到59
+- microsecond(expr)，返回值范围是0到999999
+- weekday(date)，返回值(0 = Monday, 1 = Tuesday, … 6 = Sunday)
 
 
 例子
@@ -121,10 +121,10 @@ MICROSECOND('2009-12-31 23:59:59.000010'): 10
 
 语法
 
-> dayofweek(date) 返回值 (1 = Sunday, 2 = Monday, …, 7 = Saturday)
-> dayofmonth(date) 和day()是同义词
-> dayofyear(date) 返回值1到366
-> weekofyear(date) 返回值1到53，等价于week(date, 3)
+- dayofweek(date) 返回值 (1 = Sunday, 2 = Monday, …, 7 = Saturday)
+- dayofmonth(date) 和day()是同义词
+- dayofyear(date) 返回值1到366
+- weekofyear(date) 返回值1到53，等价于week(date, 3)
 
 例子
 
@@ -141,8 +141,8 @@ WEEKOFYEAR('2008-12-20'): 51
 
 语法
 
-> dayname(date) 返回周几
-> monthname(date) 返回月名称
+- dayname(date) 返回周几
+- monthname(date) 返回月名称
 
 例子
 
@@ -157,8 +157,8 @@ MONTHNAME('2008-02-03'): February
 
 语法
 
-> MAKEDATE(year,dayofyear)  拼接日期dayofyear必须大于0，否则为NULL
-> MAKETIME(hour,minute,second)   拼接时间，second可以有小数部分
+- MAKEDATE(year,dayofyear)  拼接日期dayofyear必须大于0，否则为NULL
+- MAKETIME(hour,minute,second)   拼接时间，second可以有小数部分
 
 例子
 
@@ -178,8 +178,8 @@ MAKETIME(12,15,30.123): 12:15:30.123
 
 语法
 
-> TIMESTAMP(expr), TIMESTAMP(expr1,expr2) 格式化为标准的日期时间字符串，如果有两个参数，则将第二个加到第一个上边
-> UNIX_TIMESTAMP(), UNIX_TIMESTAMP(date) 返回当前时间或者指定时间的unix时间戳
+- TIMESTAMP(expr), TIMESTAMP(expr1,expr2) 格式化为标准的日期时间字符串，如果有两个参数，则将第二个加到第一个上边
+- UNIX\_TIMESTAMP(), UNIX\_TIMESTAMP(date) 返回当前时间或者指定时间的unix时间戳
 
 例子
 
@@ -197,11 +197,11 @@ TIMESTAMP('2003-12-31 12:00:00','12:00:00'): 2004-01-01 00:00:00
 
 语法
 
-> curdate() 返回当前时刻的日期，格式是'YYYY-MM-DD'或者YYYYMMDD
-> CURTIME([fsp]) 返回当前时刻的时间，格式是'HH:MM:SS'或者HHMMSS
-> current\_date(), current\_date curdate()同义词
-> current\_time(), current\_time curtime()同义词
-> current\_timestamp(), current\_timestamp now()同义词
+- curdate() 返回当前时刻的日期，格式是'YYYY-MM-DD'或者YYYYMMDD
+- CURTIME([fsp]) 返回当前时刻的时间，格式是'HH:MM:SS'或者HHMMSS
+- current\_date(), current\_date curdate()同义词
+- current\_time(), current\_time curtime()同义词
+- current\_timestamp(), current\_timestamp now()同义词
 
 例子
 
@@ -220,9 +220,44 @@ current_timestamp(): 2017-10-11 19:28:35
 
 ### date\_format(), time\_format()
 
+语法
 
+- date_format(date,format) 按照指定的格式对日期做格式化
+- time\_format(date,format) 和date_format()类似，但是只能使用使用小时、分钟、秒、毫秒的格式
 
-### utc\_date(), utc\_time(), utc\_timestamp()
+例子
+
+```
+SELECT DATE_FORMAT('2009-10-04 22:23:00', '%W %M %Y'), DATE_FORMAT('2007-10-04 22:23:00', '%H:%i:%s');
+结果
+DATE_FORMAT('2009-10-04 22:23:00', '%W %M %Y'): Sunday October 2009
+DATE_FORMAT('2007-10-04 22:23:00', '%H:%i:%s'): 22:23:00
+
+SELECT TIME_FORMAT('100:00:00', '%H %k %h %I %l');
+结果
+TIME_FORMAT('100:00:00', '%H %k %h %I %l'): 100 100 04 04 4
+```
+
+### utc\_date(), utc\_time(), utc\_timestamp(), UTC_DATE, UTC_TIME, UTC_TIMESTAMP
+
+语法
+
+- utc\_date() 返回当前的UTC日期
+- utc\_time([fsp]) 返回当前的UTC时间
+- utc\_timestamp([fsp]) 返回当前的UTC日期和时间
+
+例子
+
+```
+SELECT UTC_DATE(), UTC_DATE() + 0, UTC_TIME(), UTC_TIME() + 0, UTC_TIMESTAMP(), UTC_TIMESTAMP() + 0;
+结果
+         UTC_DATE(): 2017-10-23
+     UTC_DATE() + 0: 20171023
+         UTC_TIME(): 07:31:34
+     UTC_TIME() + 0: 73134
+    UTC_TIMESTAMP(): 2017-10-23 07:31:34
+UTC_TIMESTAMP() + 0: 20171023073134
+```
 
 ### to\_days(), to\_seconds()
 

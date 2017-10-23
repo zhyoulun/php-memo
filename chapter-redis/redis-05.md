@@ -59,15 +59,20 @@ _**Description**_: Connects to a Redis instance. 连接到一个redis实例
 ##### *Parameters*
 
 *host*: string. can be a host, or the path to a unix domain socket
-*port*: int, optional
+
+*port*: int, optional 端口，可选
+
 *timeout*: float, value in seconds (optional, default is 0 meaning unlimited)
-*reserved*: should be NULL if retry_interval is specified 保留值，如果设置了retry\_interval，该值设为NULL
+
+*reserved*: should be NULL if retry_interval is specified 保留项，如果设置了retry\_interval，该值设为NULL
+
 *retry_interval*: int, value in milliseconds (optional) 重试的时间间隔
+
 *read_timeout*: float, value in seconds (optional, default is 0 meaning unlimited)
 
 ##### *Return value*
 
-*BOOL*: `TRUE` on success, `FALSE` on error.
+*BOOL*: `TRUE` on success, `FALSE` on error. 成功返回true，失败返回false
 
 ##### *Example*
 
@@ -96,10 +101,15 @@ persistent equivalents.
 ##### *Parameters*
 
 *host*: string. can be a host, or the path to a unix domain socket
+
 *port*: int, optional
+
 *timeout*: float, value in seconds (optional, default is 0 meaning unlimited)
+
 *persistent_id*: string. identity for the requested persistent connection
+
 *retry_interval*: int, value in milliseconds (optional)
+
 *read_timeout*: float, value in seconds (optional, default is 0 meaning unlimited)
 
 ##### *Return value*
@@ -118,7 +128,7 @@ $redis->pconnect('/tmp/redis.sock'); // unix domain socket - would be another co
 
 ### auth
 -----
-_**Description**_: Authenticate the connection using a password.
+_**Description**_: Authenticate the connection using a password. 使用密码认证连接
 *Warning*: The password is sent in plain-text over the network.
 
 ##### *Parameters*
@@ -134,7 +144,7 @@ $redis->auth('foobared');
 
 ### select
 -----
-_**Description**_: Change the selected database for the current connection.
+_**Description**_: Change the selected database for the current connection. 为当前连接修改被选择的数据库
 
 ##### *Parameters*
 *INTEGER*: dbindex, the database number to switch to.
@@ -146,14 +156,15 @@ See method for example: [move](#move)
 
 ### close
 -----
-_**Description**_: Disconnects from the Redis instance, except when `pconnect` is used.
+_**Description**_: Disconnects from the Redis instance, except when `pconnect` is used. 断开redis连接，但如果使用的是pconnect，则不会。
 
 ### setOption
 -----
-_**Description**_: Set client option.
+_**Description**_: Set client option. 设置客户端选项
 
 ##### *Parameters*
 *parameter name*
+
 *parameter value*
 
 ##### *Return value*
@@ -180,7 +191,7 @@ $redis->setOption(Redis::OPT_SCAN, Redis::SCAN_RETRY);
 
 ### getOption
 -----
-_**Description**_: Get client option.
+_**Description**_: Get client option. 获取客户端选项
 
 ##### *Parameters*
 *parameter name*
@@ -195,7 +206,7 @@ $redis->getOption(Redis::OPT_SERIALIZER);	// return Redis::SERIALIZER_NONE, Redi
 
 ### ping
 -----
-_**Description**_: Check the current connection status
+_**Description**_: Check the current connection status 检查当前连接的状态
 
 ##### *Parameters*
 
@@ -208,7 +219,7 @@ _**Description**_: Check the current connection status
 
 ### echo
 -----
-_**Description**_: Sends a string to Redis, which replies with the same string
+_**Description**_: Sends a string to Redis, which replies with the same string 发送一个字符串到redis，它会使用相同的字符串作为响应
 
 ##### *Parameters*
 
@@ -250,7 +261,7 @@ None.
 $redis->bgRewriteAOF();
 ~~~
 
-### bgSave
+### bgSave 异步保存数据集到磁盘上
 -----
 _**Description**_: Asynchronously save the dataset to disk (in background)
 
@@ -267,11 +278,13 @@ $redis->bgSave();
 
 ### config
 -----
-_**Description**_: Get or Set the Redis server configuration parameters.
+_**Description**_: Get or Set the Redis server configuration parameters. 获取或者设置redis服务器配置参数
 
 ##### *Parameters*
 *operation* (string) either `GET` or `SET`
+
 *key* string for `SET`, glob-pattern for `GET`. See http://redis.io/commands/config-get for examples.
+
 *value* optional string (only for `SET`)
 
 ##### *Return value*
@@ -286,7 +299,7 @@ $redis->config("SET", "dir", "/var/run/redis/dumps/");
 
 ### dbSize
 -----
-_**Description**_: Return the number of keys in selected database.
+_**Description**_: Return the number of keys in selected database. 获取被选择的数据库中键的数量
 
 ##### *Parameters*
 None.
@@ -302,7 +315,7 @@ echo "Redis has $count keys\n";
 
 ### flushAll
 -----
-_**Description**_: Remove all keys from all databases.
+_**Description**_: Remove all keys from all databases. 删除所有数据库中的所有键
 
 ##### *Parameters*
 None.
@@ -317,7 +330,7 @@ $redis->flushAll();
 
 ### flushDb
 -----
-_**Description**_: Remove all keys from the current database.
+_**Description**_: Remove all keys from the current database. 从当前数据库中删除所有的键
 
 ##### *Parameters*
 None.
@@ -332,7 +345,7 @@ $redis->flushDb();
 
 ### info
 -----
-_**Description**_: Get information and statistics about the server
+_**Description**_: Get information and statistics about the server 获取关于服务器的信息和统计
 
 Returns an associative array that provides information about the server. Passing no arguments to
 INFO will call the standard REDIS INFO command, which returns information such as the following:
@@ -366,7 +379,7 @@ $redis->info("CPU"); /* just CPU information from Redis INFO */
 
 ### lastSave
 -----
-_**Description**_: Returns the timestamp of the last disk save.
+_**Description**_: Returns the timestamp of the last disk save. 返回上次磁盘保存的时间戳
 
 ##### *Parameters*
 None.
@@ -381,7 +394,7 @@ $redis->lastSave();
 
 ### resetStat
 -----
-_**Description**_: Reset the stats returned by [info](#info) method.
+_**Description**_: Reset the stats returned by [info](#info) method. 重置由info方法返回的统计信息
 
 These are the counters that are reset:
 
@@ -405,7 +418,7 @@ $redis->resetStat();
 
 ### save
 -----
-_**Description**_: Synchronously save the dataset to disk (wait to complete)
+_**Description**_: Synchronously save the dataset to disk (wait to complete) 同步保存数据集到磁盘上
 
 ##### *Parameters*
 None.
@@ -420,7 +433,7 @@ $redis->save();
 
 ### slaveOf
 -----
-_**Description**_: Changes the slave status
+_**Description**_: Changes the slave status 修改从库状态
 
 ##### *Parameters*
 Either host (string) and port (int), or no parameter to stop being a slave.
@@ -437,7 +450,7 @@ $redis->slaveOf();
 
 ### time
 -----
-_**Description**_: Return the current server time.
+_**Description**_: Return the current server time. 返回当前服务器时间
 
 ##### *Parameters*
 (none)
@@ -453,10 +466,11 @@ $redis->time();
 
 ### slowLog
 -----
-_**Description**_: Access the Redis slowLog
+_**Description**_: Access the Redis slowLog 访问redis慢日志
 
 ##### *Parameters*
 *Operation* (string): This can be either `GET`, `LEN`, or `RESET`
+
 *Length* (integer), optional: If executing a `SLOWLOG GET` command, you can pass an optional length.
 #####
 
@@ -531,13 +545,13 @@ $redis->slowLog('len');
 
 ### get
 -----
-_**Description**_: Get the value related to the specified key
+_**Description**_: Get the value related to the specified key 获取指定键的值
 
 ##### *Parameters*
 *key*
 
 ##### *Return value*
-*String* or *Bool*: If key didn't exist, `FALSE` is returned. Otherwise, the value related to this key is returned.
+*String* or *Bool*: If key didn't exist, `FALSE` is returned. Otherwise, the value related to this key is returned. 如果键不存在，返回false
 
 ##### *Examples*
 
@@ -547,11 +561,13 @@ $redis->get('key');
 
 ### set
 -----
-_**Description**_: Set the string value in argument as value of the key.  If you're using Redis >= 2.6.12, you can pass extended options as explained below
+_**Description**_: Set the string value in argument as value of the key.  If you're using Redis >= 2.6.12, you can pass extended options as explained below 设置键值对。如果你正在使用的redis>=2.6.12，你还可以传递额外的参数。
 
 ##### *Parameters*
 *Key*
+
 *Value*
+
 *Timeout or Options Array* (optional). If you pass an integer, phpredis will redirect to SETEX, and will try to use Redis >= 2.6.12 extended options if you pass an array with valid values
 
 ##### *Return value*
@@ -575,11 +591,13 @@ $redis->set('key', 'value', Array('xx', 'px'=>1000));
 
 ### setEx, pSetEx
 -----
-_**Description**_: Set the string value in argument as value of the key, with a time to live. PSETEX uses a TTL in milliseconds.
+_**Description**_: Set the string value in argument as value of the key, with a time to live. PSETEX uses a TTL in milliseconds. 设置键值对，并指定存活时间。
 
 ##### *Parameters*
 *Key*
+
 *TTL*
+
 *Value*
 
 ##### *Return value*
@@ -611,7 +629,7 @@ $redis->setNx('key', 'value'); /* return FALSE */
 
 ### del, delete
 -----
-_**Description**_: Remove specified keys.
+_**Description**_: Remove specified keys. 删除指定的键
 
 ##### *Parameters*
 An array of keys, or an undefined number of parameters, each a key: *key1* *key2* *key3* ... *keyN*
@@ -633,7 +651,7 @@ $redis->delete(array('key3', 'key4')); /* return 2 */
 
 ### exists
 -----
-_**Description**_: Verify if the specified key exists.
+_**Description**_: Verify if the specified key exists. 检验指定的键是否存在
 
 ##### *Parameters*
 *key*
@@ -650,10 +668,10 @@ $redis->exists('NonExistingKey'); /* FALSE */
 
 ### incr, incrBy
 -----
-_**Description**_: Increment the number stored at key by one. If the second argument is filled, it will be used as the integer value of the increment.
-
+_**Description**_: Increment the number stored at key by one. If the second argument is filled, it will be used as the integer value of the increment. 给值加1。如果指定了第二个参数，则给值加上指定的数
 ##### *Parameters*
 *key*
+
 *value*: value that will be added to key (only for incrBy)
 
 ##### *Return value*
@@ -672,10 +690,11 @@ $redis->incrBy('key1', 10); /* 14 */
 
 ### incrByFloat
 -----
-_**Description**_: Increment the key with floating point precision.
+_**Description**_: Increment the key with floating point precision. 给值加上一个浮点精度的数
 
 ##### *Parameters*
 *key*
+
 *value*: (float) value that will be added to the key
 
 ##### *Return value*
@@ -693,10 +712,11 @@ $redis->incrByFloat('key1', 2.5); /* 4 */
 
 ### decr, decrBy
 -----
-_**Description**_: Decrement the number stored at key by one. If the second argument is filled, it will be used as the integer value of the decrement.
+_**Description**_: Decrement the number stored at key by one. If the second argument is filled, it will be used as the integer value of the decrement. 给值减去1。如果指定了第二个参数，就给值减去指定的值。
 
 ##### *Parameters*
 *key*
+
 *value*: value that will be substracted to key (only for decrBy)
 
 ##### *Return value*
@@ -714,7 +734,7 @@ $redis->decrBy('key1', 10); /* -13 */
 
 ### mGet, getMultiple
 -----
-_**Description**_: Get the values of all the specified keys. If one or more keys dont exist, the array will contain `FALSE` at the position of the key.
+_**Description**_: Get the values of all the specified keys. If one or more keys dont exist, the array will contain `FALSE` at the position of the key. 批量获取键值对。如果一个或者多个键不存在，相对应的值就会是false
 
 ##### *Parameters*
 *Array*: Array containing the list of the keys
@@ -847,7 +867,7 @@ $redis->get('x'); 		// will return `FALSE`, as 'x' has expired.
 
 ### keys, getKeys
 -----
-_**Description**_: Returns the keys that match a certain pattern.
+_**Description**_: Returns the keys that match a certain pattern. 返回满足指定模式的键
 
 ##### *Parameters*
 *STRING*: pattern, using '*' as a wildcard.
@@ -863,11 +883,13 @@ $keyWithUserPrefix = $redis->keys('user*');
 
 ### scan
 -----
-_**Description**_:  Scan the keyspace for keys
+_**Description**_:  Scan the keyspace for keys 扫描键空间
 
 ##### *Parameters*
 *LONG (reference)*:  Iterator, initialized to NULL
+
 *STRING, Optional*:  Pattern to match
+
 *LONG, Optional*: Count of keys per iteration (only a suggestion to Redis)
 
 ##### *Return value*
@@ -928,7 +950,7 @@ $redis->object("idletime", "l"); // → 400 (in seconds, with a precision of 10 
 
 ### type
 -----
-_**Description**_: Returns the type of data pointed by a given key.
+_**Description**_: Returns the type of data pointed by a given key. 返回指定键的类型
 
 ##### *Parameters*
 *Key*: key
@@ -936,12 +958,12 @@ _**Description**_: Returns the type of data pointed by a given key.
 ##### *Return value*
 
 Depending on the type of the data pointed by the key, this method will return the following value:
-string: Redis::REDIS_STRING
-set: Redis::REDIS_SET
-list: Redis::REDIS_LIST
-zset: Redis::REDIS_ZSET
-hash: Redis::REDIS_HASH
-other: Redis::REDIS_NOT_FOUND
+- string: Redis::REDIS_STRING
+- set: Redis::REDIS_SET
+- list: Redis::REDIS_LIST
+- zset: Redis::REDIS_ZSET
+- hash: Redis::REDIS_HASH
+- other: Redis::REDIS_NOT_FOUND
 
 ##### *Example*
 ~~~
@@ -950,10 +972,11 @@ $redis->type('key');
 
 ### append
 -----
-_**Description**_: Append specified string to the string stored in specified key.
+_**Description**_: Append specified string to the string stored in specified key. 给字符串追加字符串
 
 ##### *Parameters*
 *Key*
+
 *Value*
 
 ##### *Return value*
@@ -968,13 +991,15 @@ $redis->get('key'); /* 'value1value2' */
 
 ### getRange
 -----
-_**Description**_: Return a substring of a larger string
+_**Description**_: Return a substring of a larger string 返回一个大字符串的子串
 
 *Note*: substr also supported but deprecated in redis.
 
 ##### *Parameters*
 *key*
+
 *start*
+
 *end*
 
 ##### *Return value*
@@ -989,11 +1014,13 @@ $redis->getRange('key', -5, -1); /* 'value' */
 
 ### setRange
 -----
-_**Description**_: Changes a substring of a larger string.
+_**Description**_: Changes a substring of a larger string. 修改一个大字符串的子串
 
 ##### *Parameters*
 *key*
+
 *offset*
+
 *value*
 
 ##### *Return value*
@@ -1008,7 +1035,7 @@ $redis->get('key'); /* "Hello redis" */
 
 ### strLen
 -----
-_**Description**_: Get the length of a string value.
+_**Description**_: Get the length of a string value. 获取字符串值的长度
 
 ##### *Parameters*
 *key*
@@ -1085,10 +1112,11 @@ _**Description**_: Count bits in a string.
 
 ### sort
 -----
-_**Description**_: Sort the elements in a list, set or sorted set.
+_**Description**_: Sort the elements in a list, set or sorted set. 对list、set或者有序set进行排序
 
 ##### *Parameters*
 *Key*: key
+
 *Options*: array(key => value, ...) - optional, with the following keys and values:
 ~~~
     'by' => 'some_pattern_*',
@@ -1120,7 +1148,7 @@ var_dump($redis->sort('s', array('sort' => 'desc', 'store' => 'out'))); // (int)
 
 ### ttl, pttl
 -----
-_**Description**_: Returns the time to live left for a given key in seconds (ttl), or milliseconds (pttl).
+_**Description**_: Returns the time to live left for a given key in seconds (ttl), or milliseconds (pttl).返回指定键的剩余生存时间长度。
 
 ##### *Parameters*
 *Key*: key
@@ -1135,7 +1163,7 @@ $redis->ttl('key');
 
 ### persist
 -----
-_**Description**_: Remove the expiration timer from a key.
+_**Description**_: Remove the expiration timer from a key. 删除键的过期时间。
 
 ##### *Parameters*
 *Key*: key
@@ -1176,8 +1204,7 @@ string(6) "value1"
 
 ### dump
 -----
-_**Description**_: Dump a key out of a redis database, the value of which can later be passed into redis using the RESTORE command.  The data
-that comes out of DUMP is a binary representation of the key as Redis stores it.
+_**Description**_: Dump a key out of a redis database, the value of which can later be passed into redis using the RESTORE command.  The data that comes out of DUMP is a binary representation of the key as Redis stores it.
 ##### *Parameters*
 *key* string
 ##### *Return value*
@@ -1204,7 +1231,7 @@ $redis->restore('bar', 0, $val); // The key 'bar', will now be equal to the key 
 
 ### migrate
 -----
-_**Description**_: Migrates a key to a different Redis instance.
+_**Description**_: Migrates a key to a different Redis instance. 迁移一个键到不同的redis实例中
 
 **Note:**: Redis introduced migrating multiple keys in 3.0.6, so you must have at least
 that version in order to call `migrate` with an array of keys.
@@ -1249,10 +1276,12 @@ $redis->migrate('backup', 6379, ['key1', 'key2', 'key3'], 0, 3600);
 
 ### hSet
 -----
-_**Description**_: Adds a value to the hash stored at key.
+_**Description**_: Adds a value to the hash stored at key. 添加一个值到键的hash中
 ##### *Parameters*
 *key*
+
 *hashKey*
+
 *value*
 
 ##### *Return value*
@@ -1269,7 +1298,7 @@ $redis->hGet('h', 'key1'); /* returns "plop" */
 
 ### hSetNx
 -----
-_**Description**_: Adds a value to the hash stored at key only if this field isn't already in the hash.
+_**Description**_: Adds a value to the hash stored at key only if this field isn't already in the hash. 只有当指定的键在hash中不存在时，才能添加这个值到hash中。
 
 ##### *Return value*
 *BOOL* `TRUE` if the field was set, `FALSE` if it was already present.
@@ -1284,19 +1313,21 @@ $redis->hSetNx('h', 'key1', 'world'); /* FALSE, 'key1' => 'hello' in the hash at
 
 ### hGet
 -----
-_**Description**_: Gets a value from the hash stored at key. If the hash table doesn't exist, or the key doesn't exist, `FALSE` is returned.
+_**Description**_: Gets a value from the hash stored at key. If the hash table doesn't exist, or the key doesn't exist, `FALSE` is returned. 返回指定键的hash中的值。如果hash表不存在，或者键不存在，返回false
 ##### *Parameters*
 *key*
+
 *hashKey*
 
 ##### *Return value*
 *STRING* The value, if the command executed successfully
+
 *BOOL* `FALSE` in case of failure
 
 
 ### hLen
 -----
-_**Description**_: Returns the length of a hash, in number of items
+_**Description**_: Returns the length of a hash, in number of items 返回hash中键值对的个数
 ##### *Parameters*
 *key*
 
@@ -1315,8 +1346,11 @@ $redis->hLen('h'); /* returns 2 */
 _**Description**_: Removes a value from the hash stored at key. If the hash table doesn't exist, or the key doesn't exist, `FALSE` is returned.
 ##### *Parameters*
 *key*
+
 *hashKey1*
+
 *hashKey2*
+
 ...
 
 ##### *Return value*
@@ -1325,7 +1359,7 @@ _**Description**_: Removes a value from the hash stored at key. If the hash tabl
 
 ### hKeys
 -----
-_**Description**_: Returns the keys in a hash, as an array of strings.
+_**Description**_: Returns the keys in a hash, as an array of strings. 返回hash表中所有的键
 
 ##### *Parameters*
 *Key*: key
@@ -1360,7 +1394,7 @@ The order is random and corresponds to redis' own internal representation of the
 
 ### hVals
 -----
-_**Description**_: Returns the values in a hash, as an array of strings.
+_**Description**_: Returns the values in a hash, as an array of strings. 返回hash表中所有的值
 
 ##### *Parameters*
 *Key*: key
@@ -1395,7 +1429,7 @@ The order is random and corresponds to redis' own internal representation of the
 
 ### hGetAll
 -----
-_**Description**_: Returns the whole hash, as an array of strings indexed by strings.
+_**Description**_: Returns the whole hash, as an array of strings indexed by strings. 返回hash表中所有的键值对
 
 ##### *Parameters*
 *Key*: key
@@ -1430,10 +1464,12 @@ The order is random and corresponds to redis' own internal representation of the
 
 ### hExists
 -----
-_**Description**_: Verify if the specified member exists in a key.
+_**Description**_: Verify if the specified member exists in a key. 验证hash表中指定的键是否存在
 ##### *Parameters*
 *key*
+
 *memberKey*
+
 ##### *Return value*
 *BOOL*: If the member exists in the hash table, return `TRUE`, otherwise return `FALSE`.
 ##### *Examples*
@@ -1493,7 +1529,7 @@ $redis->hIncrBy('user:1', 'salary', 100); // Joe earns 100 more now.
 
 ### hMGet
 -----
-_**Description**_: Retrieve the values associated to the specified fields in the hash.
+_**Description**_: Retrieve the values associated to the specified fields in the hash. 返回hash表中指定的键值对
 ##### *Parameters*
 *key*
 *memberKeys* Array
@@ -1512,8 +1548,11 @@ $redis->hMGet('h', array('field1', 'field2')); /* returns array('field1' => 'val
 _**Description**_:  Scan a HASH value for members, with an optional pattern and count
 ##### *Parameters*
 *key*: String
+
 *iterator*: Long (reference)
+
 *pattern*: Optional pattern to match against
+
 *count*: How many keys to return in a go (only a sugestion to Redis)
 ##### *Return value*
 *Array* An array of members that match our pattern
@@ -1532,9 +1571,10 @@ while($arr_keys = $redis->hScan('hash', $it)) {
 
 ### hStrLen
 -----
-_**Description**_: Get the string length of the value associated with field in the hash stored at key.
+_**Description**_: Get the string length of the value associated with field in the hash stored at key. 返回hash表中某个键对应的值的长度
 ##### *Parameters*
 *key*: String
+
 *field*: String
 ##### *Return value*
 *LONG* the string length of the value associated with field, or zero when field is not present in the hash or key does not exist at all.
