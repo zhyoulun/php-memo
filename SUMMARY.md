@@ -21,6 +21,7 @@
   * [操作数据库的单例模式](chapter-mysql/mysql-01.md)
   * [MySQL中的日期时间函数](chapter-mysql/mysql-02.md)
   * [查看MySQL服务端的版本](chapter-mysql/mysql-03.md)
+  * [MySQL中的字符串函数](chapter-mysql/mysql-04.md)
 * Redis数据库
   * [操作redis的单例模式](chapter-redis/redis-01.md)
   * [redis读写分离](chapter-redis/redis-02.md)
@@ -29,6 +30,8 @@
   * [php的redis扩展接口文档](chapter-redis/redis-05.md)
 * Linux Shell
   * [获取当前脚本所在文件夹的路径](chapter-shell/shell-01.md)
+  * [自动填写数据库登录密码](chapter-shell/shell-02.md)
+  * [查找文件](chapter-shell/shell-03.md)
 * 源码分析
   * [C语言函数学习](chapter-source-code/source-code-01.md)
   * [Unix网络编程术语](chapter-source-code/source-code-02.md)

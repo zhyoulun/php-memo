@@ -261,6 +261,24 @@ UTC_TIMESTAMP() + 0: 20171023073134
 
 ### to\_days(), to\_seconds()
 
+语法
+
+- to_days() 将日期转换成天数，第一天是0000-01-01
+- to_seconds 将日期转换成秒数，第86400秒是0000-01-01 00:00:00
+
+例子
+
+```
+select to_days('0000-01-01'),to_days('0000-01-02'),to_days('2012-12-12'),to_seconds('0000-01-01 00:00:00'),to_seconds('0000-01-01 00:00:01'),to_seconds('2012-12-12 12:12:12');
+输出
+            to_days('0000-01-01'): 1
+            to_days('0000-01-02'): 2
+            to_days('2012-12-12'): 735214
+to_seconds('0000-01-01 00:00:00'): 86400
+to_seconds('0000-01-01 00:00:01'): 86401
+to_seconds('2012-12-12 12:12:12'): 63522533532
+```
+
 ### period\_add(), period\_diff()
 
 ### adddate(), addtime(), date\_add(), timestampadd()

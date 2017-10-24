@@ -1,0 +1,61 @@
+## MySQL中的字符串函数
+
+### SUBSTR(),SUBSTRING(), SUBSTRING_INDEX()
+
+ASCII()
+BIN()
+BIT_LENGTH()
+CHAR()
+### CHAR_LENGTH(), CHARACTER_LENGTH()
+### CONCAT(), CONCAT_WS()
+ELT()
+EXPORT_SET()
+FIELD()
+FIND_IN_SET()
+FORMAT()
+### FROM_BASE64(), TO_BASE64()
+HEX()
+INSERT()
+INSTR()
+### LCASE(),LOWER(),UCASE(),UPPER()
+LEFT()
+LENGTH()
+LIKE
+LOAD_FILE()
+LOCATE()
+
+LPAD()
+### LTRIM(),RTRIM(),TRIM()
+MAKE_SET()
+MATCH
+MID()
+NOT LIKE
+NOT REGEXP
+OCT()
+OCTET_LENGTH()
+ORD()
+POSITION()
+QUOTE()
+REGEXP
+REPEAT()
+REPLACE()
+REVERSE()
+RIGHT()
+RLIKE
+RPAD()
+
+SOUNDEX()
+SOUNDS LIKE
+SPACE()
+STRCMP()
+
+
+
+
+UNHEX()
+
+WEIGHT_STRING()
+
+### 参考
+
+- [https://dev.mysql.com/doc/refman/5.7/en/string-functions.html](https://dev.mysql.com/doc/refman/5.7/en/string-functions.html)
