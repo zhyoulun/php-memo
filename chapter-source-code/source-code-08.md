@@ -9,3 +9,4 @@
 ### 参考
 
 - Linux/Unix系统编程手册，上，p74页 
+- [http://man7.org/linux/man-pages/man3/open.3p.html](http://man7.org/linux/man-pages/man3/open.3p.html)
