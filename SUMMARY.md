@@ -22,6 +22,8 @@
   * [MySQL中的日期时间函数](chapter-mysql/mysql-02.md)
   * [查看MySQL服务端的版本](chapter-mysql/mysql-03.md)
   * [MySQL中的字符串函数](chapter-mysql/mysql-04.md)
+  * [MySQL中的控制流函数](chapter-mysql/mysql-05.md)
+  * [MySQL导出和导入数据库](chapter-mysql/mysql-06.md)
 * Redis数据库
   * [操作redis的单例模式](chapter-redis/redis-01.md)
   * [redis读写分离](chapter-redis/redis-02.md)
