@@ -45,4 +45,5 @@
   * [多个程序向同一个文件追加数据](chapter-source-code/source-code-08.md)
 * 字符串
   * [生成随机字符串](chapter-string/string-01.md)
-
+* 资源
+  * [靠谱网站](chapter-resource/resource-01.md)
