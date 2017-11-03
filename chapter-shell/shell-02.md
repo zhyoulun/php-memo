@@ -65,7 +65,7 @@ expect eof
 
 其中
 
-- spawn参数指定需要自动化哪一个命令
+- spawn参数指定需要自动化哪一个命令，启动新的进程
 - expect参数提供需要等待的消息
 - send是要发送的消息
 - expect eof指明命令交互结束
@@ -94,7 +94,8 @@ mysql -u root -p
 spawn ./test.sh
 expect "Enter password:"
 send "password123456\n"
-expect eof
+#expect eof
+interact
 
 运行
 [root@localhost temp6]# ./auto_fill_password.sh 
@@ -115,6 +116,9 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>
 ```
 
+其中，`interact`表示，执行完成后保持交互状态，把控制权交给控制台，这个时候就可以手工操作了。如果没有这一句登录完成后会退出，而不是留在远程终端上。如果你只是登录过去执行一段命令就退出，可改为`expect eof`
+
 ### 参考
 
 - Linux Shell脚本攻略（第2版）
+- [Shell脚本学习之expect命令](http://blog.csdn.net/leexide/article/details/17485451)

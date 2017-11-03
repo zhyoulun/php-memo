@@ -34,6 +34,7 @@
   * [获取当前脚本所在文件夹的路径](chapter-shell/shell-01.md)
   * [自动填写数据库登录密码](chapter-shell/shell-02.md)
   * [查找文件](chapter-shell/shell-03.md)
+  * [expect使用示例](chapter-shell/shell-04.md)
 * 源码分析
   * [C语言函数学习](chapter-source-code/source-code-01.md)
   * [Unix网络编程术语](chapter-source-code/source-code-02.md)

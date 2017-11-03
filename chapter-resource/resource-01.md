@@ -14,13 +14,16 @@
 
 - [阮一峰的网络日志](http://www.ruanyifeng.com/blog/) 各种新知识
 
+### 社区
+
+- [v2ex](https://www.v2ex.com/)
+
 ### 未分类
 
 - https://www.zddhub.com/
 - https://atjason.com/
 - https://news.ycombinator.com/
 - https://www.indiehackers.com/
-- https://www.v2ex.com/
 - http://www.yinwang.org/
 - http://chuangzaoshi.com/
 - https://daimajia.com/
