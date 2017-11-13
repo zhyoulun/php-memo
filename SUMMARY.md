@@ -48,3 +48,7 @@
   * [生成随机字符串](chapter-string/string-01.md)
 * 资源
   * [靠谱网站](chapter-resource/resource-01.md)
+* 安装备忘
+  * [redis安装备忘](chapter-setup/setup-01.md)
+  * [zookeeper安装备忘](chapter-setup/setup-02.md)
+  * [storm安装备忘](chapter-setup/setup-03.md)
