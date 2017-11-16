@@ -35,6 +35,8 @@
   * [自动填写数据库登录密码](chapter-shell/shell-02.md)
   * [查找文件](chapter-shell/shell-03.md)
   * [expect使用示例](chapter-shell/shell-04.md)
+  * [sed](chapter-shell/shell-05.md)
+  * [awk](chapter-shell/shell-06.md)
 * 源码分析
   * [C语言函数学习](chapter-source-code/source-code-01.md)
   * [Unix网络编程术语](chapter-source-code/source-code-02.md)
@@ -46,9 +48,11 @@
   * [多个程序向同一个文件追加数据](chapter-source-code/source-code-08.md)
 * 字符串
   * [生成随机字符串](chapter-string/string-01.md)
-* 资源
-  * [靠谱网站](chapter-resource/resource-01.md)
+* storm
+  * [strom中的NotSerializableException异常](chapter-storm/storm-01.md)
 * 安装备忘
   * [redis安装备忘](chapter-setup/setup-01.md)
   * [zookeeper安装备忘](chapter-setup/setup-02.md)
   * [storm安装备忘](chapter-setup/setup-03.md)
+* 资源
+  * [靠谱网站](chapter-resource/resource-01.md)
